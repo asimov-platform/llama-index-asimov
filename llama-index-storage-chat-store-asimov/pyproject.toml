@@ -1,0 +1,43 @@
+# See: https://packaging.python.org/en/latest/tutorials/packaging-projects/
+# See: https://packaging.python.org/en/latest/guides/writing-pyproject-toml/
+
+[build-system]
+requires = ["hatchling", "hatch-vcs"]
+build-backend = "hatchling.build"
+
+[project]
+name = "llama-index-storage-chat-store-asimov"
+description = "llama-index storage-chat-store ASIMOV integration"
+readme = "README.md"
+license = "Unlicense"
+license-files = ["UNLICENSE"]
+authors = [{ name = "ASIMOV Protocol", email = "support@asimov.so" }]
+requires-python = ">=3.9"
+dependencies = []
+dynamic = ["version"]
+
+[project.urls]
+Homepage = "https://github.com/asimov-platform"
+Repository = "https://github.com/asimov-platform/llama-index-asimov"
+Changelog = "https://github.com/asimov-platform/llama-index-asimov/blob/master/CHANGES.md"
+Releases = "https://github.com/asimov-platform/llama-index-asimov/releases"
+Issues = "https://github.com/asimov-platform/llama-index-asimov/issues"
+
+[tool.hatch.version]
+source = "vcs"
+fallback-version = "0.0.0"
+
+[tool.hatch.version.raw-options]
+root = ".."
+
+[tool.hatch.build.hooks.vcs]
+version-file = "_version.py"
+
+[tool.hatch.build.targets.wheel.sources]
+"" = "llama_index_storage_chat_store_asimov/"
+
+[tool.hatch.envs.default]
+installer = "uv"
+
+[tool.mypy]
+disallow_untyped_defs = true

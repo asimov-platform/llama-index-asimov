@@ -7,6 +7,24 @@ resolution-markers = [
     "python_full_version < '3.10'",
 ]
 
+[manifest]
+members = [
+    "llama-index-agent-asimov",
+    "llama-index-asimov",
+    "llama-index-embeddings-asimov",
+    "llama-index-graph-stores-asimov",
+    "llama-index-indices-managed-asimov",
+    "llama-index-llms-asimov",
+    "llama-index-memory-asimov",
+    "llama-index-readers-asimov",
+    "llama-index-storage-chat-store-asimov",
+    "llama-index-storage-docstore-asimov",
+    "llama-index-storage-index-store-asimov",
+    "llama-index-storage-kvstore-asimov",
+    "llama-index-tools-asimov",
+    "llama-index-vector-stores-asimov",
+]
+
 [[package]]
 name = "aiohappyeyeballs"
 version = "2.6.1"
@@ -651,6 +669,10 @@ wheels = [
 ]
 
 [[package]]
+name = "llama-index-agent-asimov"
+source = { editable = "llama-index-agent-asimov" }
+
+[[package]]
 name = "llama-index-asimov"
 source = { editable = "." }
 dependencies = [
@@ -707,6 +729,54 @@ sdist = { url = "https://files.pythonhosted.org/packages/f7/45/163806502804ff75a
 wheels = [
     { url = "https://files.pythonhosted.org/packages/dd/a3/583d80764df75aefc9885f28dcc06a0e5aefc993fa5318186e70f2340d73/llama_index_core-0.12.39-py3-none-any.whl", hash = "sha256:c255ed87aa85e43893f2bb05870b61ce7701d7a6a931d174ba925def5856b4c2", size = 7664906, upload-time = "2025-05-30T22:21:01.939Z" },
 ]
+
+[[package]]
+name = "llama-index-embeddings-asimov"
+source = { editable = "llama-index-embeddings-asimov" }
+
+[[package]]
+name = "llama-index-graph-stores-asimov"
+source = { editable = "llama-index-graph-stores-asimov" }
+
+[[package]]
+name = "llama-index-indices-managed-asimov"
+source = { editable = "llama-index-indices-managed-asimov" }
+
+[[package]]
+name = "llama-index-llms-asimov"
+source = { editable = "llama-index-llms-asimov" }
+
+[[package]]
+name = "llama-index-memory-asimov"
+source = { editable = "llama-index-memory-asimov" }
+
+[[package]]
+name = "llama-index-readers-asimov"
+source = { editable = "llama-index-readers-asimov" }
+
+[[package]]
+name = "llama-index-storage-chat-store-asimov"
+source = { editable = "llama-index-storage-chat-store-asimov" }
+
+[[package]]
+name = "llama-index-storage-docstore-asimov"
+source = { editable = "llama-index-storage-docstore-asimov" }
+
+[[package]]
+name = "llama-index-storage-index-store-asimov"
+source = { editable = "llama-index-storage-index-store-asimov" }
+
+[[package]]
+name = "llama-index-storage-kvstore-asimov"
+source = { editable = "llama-index-storage-kvstore-asimov" }
+
+[[package]]
+name = "llama-index-tools-asimov"
+source = { editable = "llama-index-tools-asimov" }
+
+[[package]]
+name = "llama-index-vector-stores-asimov"
+source = { editable = "llama-index-vector-stores-asimov" }
 
 [[package]]
 name = "markupsafe"

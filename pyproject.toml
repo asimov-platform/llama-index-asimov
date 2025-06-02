@@ -11,9 +11,7 @@ description = "LlamaIndex integration with the ASIMOV platform."
 readme = "README.md"
 license = "Unlicense"
 license-files = ["UNLICENSE"]
-authors = [
-    { name = "ASIMOV Protocol", email = "support@asimov.so" }
-]
+authors = [{ name = "ASIMOV Protocol", email = "support@asimov.so" }]
 requires-python = ">=3.9"
 dependencies = ["llama-index-core>=0.12"]
 dynamic = ["version"]
@@ -31,12 +29,13 @@ test = []
 
 [tool.hatch.version]
 source = "vcs"
+fallback-version = "0.0.0"
 
 [tool.hatch.build.hooks.vcs]
 version-file = "_version.py"
 
 [tool.hatch.build.targets.sdist]
-include = ["_version.py"]
+only-include = ["AUTHORS", "CHANGES.md", "Makefile", "VERSION", "_version.py"]
 exclude = [".*"]
 
 [tool.hatch.build.targets.wheel.sources]
@@ -47,3 +46,35 @@ installer = "uv"
 
 [tool.mypy]
 disallow_untyped_defs = true
+
+[tool.uv.sources]
+llama-index-agent-asimov = { workspace = true }
+llama-index-embeddings-asimov = { workspace = true }
+llama-index-graph-stores-asimov = { workspace = true }
+llama-index-indices-managed-asimov = { workspace = true }
+llama-index-llms-asimov = { workspace = true }
+llama-index-memory-asimov = { workspace = true }
+llama-index-readers-asimov = { workspace = true }
+llama-index-storage-chat-store-asimov = { workspace = true }
+llama-index-storage-docstore-asimov = { workspace = true }
+llama-index-storage-index-store-asimov = { workspace = true }
+llama-index-storage-kvstore-asimov = { workspace = true }
+llama-index-tools-asimov = { workspace = true }
+llama-index-vector-stores-asimov = { workspace = true }
+
+[tool.uv.workspace]
+members = [
+    "llama-index-agent-asimov",
+    "llama-index-embeddings-asimov",
+    "llama-index-graph-stores-asimov",
+    "llama-index-indices-managed-asimov",
+    "llama-index-llms-asimov",
+    "llama-index-memory-asimov",
+    "llama-index-readers-asimov",
+    "llama-index-storage-chat-store-asimov",
+    "llama-index-storage-docstore-asimov",
+    "llama-index-storage-index-store-asimov",
+    "llama-index-storage-kvstore-asimov",
+    "llama-index-tools-asimov",
+    "llama-index-vector-stores-asimov",
+]
