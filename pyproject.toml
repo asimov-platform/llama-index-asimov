@@ -1,0 +1,49 @@
+# See: https://packaging.python.org/en/latest/tutorials/packaging-projects/
+# See: https://packaging.python.org/en/latest/guides/writing-pyproject-toml/
+
+[build-system]
+requires = ["hatchling", "hatch-vcs"]
+build-backend = "hatchling.build"
+
+[project]
+name = "llama-index-asimov"
+description = "LlamaIndex integration with the ASIMOV platform."
+readme = "README.md"
+license = "Unlicense"
+license-files = ["UNLICENSE"]
+authors = [
+    { name = "ASIMOV Protocol", email = "support@asimov.so" }
+]
+requires-python = ">=3.9"
+dependencies = ["llama-index-core>=0.12"]
+dynamic = ["version"]
+
+[project.urls]
+Homepage = "https://github.com/asimov-platform"
+Repository = "https://github.com/asimov-platform/llama-index-asimov"
+Changelog = "https://github.com/asimov-platform/llama-index-asimov/blob/master/CHANGES.md"
+Releases = "https://github.com/asimov-platform/llama-index-asimov/releases"
+Issues = "https://github.com/asimov-platform/llama-index-asimov/issues"
+
+[dependency-groups]
+lint = ["ruff"]
+test = []
+
+[tool.hatch.version]
+source = "vcs"
+
+[tool.hatch.build.hooks.vcs]
+version-file = "_version.py"
+
+[tool.hatch.build.targets.sdist]
+include = ["_version.py"]
+exclude = [".*"]
+
+[tool.hatch.build.targets.wheel.sources]
+"" = "llama_index_asimov/"
+
+[tool.hatch.envs.default]
+installer = "uv"
+
+[tool.mypy]
+disallow_untyped_defs = true
