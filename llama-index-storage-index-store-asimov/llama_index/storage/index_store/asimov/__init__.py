@@ -3,9 +3,10 @@
 """ASIMOV for LlamaIndex"""
 
 from ._version import __version__, __version_tuple__
-from .base import *
+from .base import AsimovIndexStore
 
 __all__ = [
+    'AsimovIndexStore',
     '__version__',
     '__version_tuple__',
 ]
