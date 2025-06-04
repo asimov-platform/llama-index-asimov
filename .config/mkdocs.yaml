@@ -111,7 +111,20 @@ plugins:
   - mkdocstrings:
       handlers:
         python:
-          paths: [..]
+          paths:
+            - ../llama-index-agent-asimov
+            - ../llama-index-embeddings-asimov
+            - ../llama-index-graph-stores-asimov
+            - ../llama-index-indices-managed-asimov
+            - ../llama-index-llms-asimov
+            - ../llama-index-memory-asimov
+            - ../llama-index-readers-asimov
+            - ../llama-index-storage-chat-store-asimov
+            - ../llama-index-storage-docstore-asimov
+            - ../llama-index-storage-index-store-asimov
+            - ../llama-index-storage-kvstore-asimov
+            - ../llama-index-tools-asimov
+            - ../llama-index-vector-stores-asimov
           inventories:
             - https://docs.python.org/3/objects.inv
             - https://docs.llamaindex.ai/en/v0.12.15/objects.inv

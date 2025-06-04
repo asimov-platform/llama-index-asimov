@@ -11,6 +11,9 @@ build:
   tools:
     python: "3.13"
   jobs:
+    post_checkout:
+      - mkdir -p $READTHEDOCS_REPOSITORY_PATH/input
+      - cd $READTHEDOCS_REPOSITORY_PATH && find . -maxdepth 1 -not -name . -not -name input -exec mv {} input/ \;
     pre_create_environment:
       - asdf plugin add uv
       - asdf install uv latest
@@ -18,4 +21,8 @@ build:
     create_environment:
       - uv venv "${READTHEDOCS_VIRTUALENV_PATH}"
     install:
-      - UV_PROJECT_ENVIRONMENT="${READTHEDOCS_VIRTUALENV_PATH}" uv sync --frozen --group docs
+      - cd $READTHEDOCS_REPOSITORY_PATH/input && UV_PROJECT_ENVIRONMENT="${READTHEDOCS_VIRTUALENV_PATH}" uv sync --frozen --group docs
+    build:
+      html:
+        - mkdir -p $READTHEDOCS_OUTPUT/html/
+        - cd $READTHEDOCS_REPOSITORY_PATH/input && python -m mkdocs build --clean --site-dir $READTHEDOCS_OUTPUT/html --config-file .config/mkdocs.yaml
