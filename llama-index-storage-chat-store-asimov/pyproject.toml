@@ -31,10 +31,7 @@ fallback-version = "0.0.0"
 root = ".."
 
 [tool.hatch.build.hooks.vcs]
-version-file = "_version.py"
-
-[tool.hatch.build.targets.wheel.sources]
-"" = "llama_index_storage_chat_store_asimov/"
+version-file = "llama_index/storage/chat_store/asimov/_version.py"
 
 [tool.hatch.envs.default]
 installer = "uv"
