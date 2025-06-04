@@ -24,8 +24,17 @@ Releases = "https://github.com/asimov-platform/llama-index-asimov/releases"
 Issues = "https://github.com/asimov-platform/llama-index-asimov/issues"
 
 [dependency-groups]
+dev = []
+docs = [
+    "mkdocs>=1.6",
+    "mkdocs-git-committers-plugin-2>=2.5",
+    "mkdocs-git-revision-date-localized-plugin>=1.2",
+    "mkdocs-llmstxt>=0.2",
+    "mkdocs-material[imaging]>=9.5",
+    "mkdocstrings[python]>=0.29",
+]
 lint = ["ruff"]
-test = []
+test = ["pytest"]
 
 [tool.hatch.version]
 source = "vcs"
@@ -46,6 +55,9 @@ installer = "uv"
 
 [tool.mypy]
 disallow_untyped_defs = true
+
+[tool.uv]
+default-groups = ["dev", "docs"]
 
 [tool.uv.sources]
 llama-index-agent-asimov = { workspace = true }

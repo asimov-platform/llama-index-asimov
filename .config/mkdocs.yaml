@@ -1,0 +1,146 @@
+# See: https://www.mkdocs.org/user-guide/configuration/
+---
+docs_dir: ..
+
+site_name: ASIMOV for LlamaIndex
+site_url: https://llama-index-asimov.readthedocs.io/
+site_description: LlamaIndex integration with the ASIMOV platform.
+site_author: ASIMOV Protocol
+repo_url: https://github.com/asimov-platform/llama-index-asimov
+use_directory_urls: false
+
+extra:
+  social:
+    - icon: fontawesome/brands/python
+      link: https://pypi.org/project/llama-index-asimov/
+      name: ASIMOV for LlamaIndex on PyPI
+    - icon: fontawesome/brands/github
+      link: https://github.com/asimov-platform
+      name: ASIMOV Platform on GitHub
+    - icon: fontawesome/brands/x-twitter
+      link: https://x.com/ASIMOV_Platform
+      name: ASIMOV Platform on X
+
+nav:
+  - llama-index-asimov:
+      - README.md
+  - llama-index-agent-asimov:
+      - llama-index-agent-asimov/README.md
+      - llama_index.agent.asimov: llama-index-agent-asimov/api.md
+  - llama-index-embeddings-asimov:
+      - llama-index-embeddings-asimov/README.md
+      - llama_index.embeddings.asimov: llama-index-embeddings-asimov/api.md
+  - llama-index-graph-stores-asimov:
+      - llama-index-graph-stores-asimov/README.md
+      - llama_index.graph_stores.asimov: llama-index-graph-stores-asimov/api.md
+  - llama-index-indices-managed-asimov:
+      - llama-index-indices-managed-asimov/README.md
+      - llama_index.indices.managed.asimov: llama-index-indices-managed-asimov/api.md
+  - llama-index-llms-asimov:
+      - llama-index-llms-asimov/README.md
+      - llama_index.llms.asimov: llama-index-llms-asimov/api.md
+  - llama-index-memory-asimov:
+      - llama-index-memory-asimov/README.md
+      - llama_index.memory.asimov: llama-index-memory-asimov/api.md
+  - llama-index-readers-asimov:
+      - llama-index-readers-asimov/README.md
+      - llama_index.readers.asimov: llama-index-readers-asimov/api.md
+  - llama-index-storage-chat-store-asimov:
+      - llama-index-storage-chat-store-asimov/README.md
+      - llama_index.storage.chat_store.asimov: llama-index-storage-chat-store-asimov/api.md
+  - llama-index-storage-docstore-asimov:
+      - llama-index-storage-docstore-asimov/README.md
+      - llama_index.storage.docstore.asimov: llama-index-storage-docstore-asimov/api.md
+  - llama-index-storage-index-store-asimov:
+      - llama-index-storage-index-store-asimov/README.md
+      - llama_index.storage.index_store.asimov: llama-index-storage-index-store-asimov/api.md
+  - llama-index-storage-kvstore-asimov:
+      - llama-index-storage-kvstore-asimov/README.md
+      - llama_index.storage.kvstore.asimov: llama-index-storage-kvstore-asimov/api.md
+  - llama-index-tools-asimov:
+      - llama-index-tools-asimov/README.md
+      - llama_index.tools.asimov: llama-index-tools-asimov/api.md
+  - llama-index-vector-stores-asimov:
+      - llama-index-vector-stores-asimov/README.md
+      - llama_index.vector_stores.asimov: llama-index-vector-stores-asimov/api.md
+
+theme:
+  name: material
+  language: en
+  features:
+    - navigation.footer
+    - navigation.indexes
+    - navigation.sections
+    - navigation.tracking
+    - content.code.annotate
+    - content.code.copy
+    - search.highlight
+    - search.suggest
+    - toc.follow
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: purple
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: lime
+      toggle:
+        icon: material/weather-night
+        name: Switch to system preference
+
+plugins:
+  - git-committers:
+      repository: asimov-platform/llama-index-asimov
+  - git-revision-date-localized:
+      fallback_to_build_date: true
+  - llmstxt:
+      markdown_description: |
+        LlamaIndex integration with the ASIMOV platform.
+      sections:
+        API reference:
+          - "*.md"
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [..]
+          inventories:
+            - https://docs.python.org/3/objects.inv
+            - https://docs.llamaindex.ai/en/v0.12.15/objects.inv
+          options:
+            show_source: false
+            show_symbol_type_heading: true
+            show_symbol_type_toc: true
+            show_root_heading: false
+  - offline
+  - search
+  - social
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - pymdownx.betterem
+  - pymdownx.blocks.caption
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      default_lang: python
+  - pymdownx.inlinehilite
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tilde
+  - tables
