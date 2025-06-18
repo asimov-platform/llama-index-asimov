@@ -1,6 +1,7 @@
 # See: https://www.mkdocs.org/user-guide/configuration/
 ---
-docs_dir: ../docs
+docs_dir: ..
+site_dir: ../_site
 
 site_name: ASIMOV for LlamaIndex
 site_url: https://llama-index-asimov.readthedocs.io/
