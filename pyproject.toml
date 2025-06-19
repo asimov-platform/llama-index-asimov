@@ -59,6 +59,10 @@ disallow_untyped_defs = true
 [tool.uv]
 default-groups = ["dev", "docs"]
 
+[tool.pytest.ini_options]
+testpaths = ["llama-index-*/tests"]
+python_files = "test_*.py"
+
 [tool.uv.sources]
 llama-index-agent-asimov = { workspace = true }
 llama-index-embeddings-asimov = { workspace = true }
