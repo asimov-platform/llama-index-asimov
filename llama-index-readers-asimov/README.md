@@ -12,12 +12,6 @@ trustworthy, neurosymbolic AI.
 - [Python] 3.9+
 - [ASIMOV] [modules] available in the [`PATH`]
 
-## 👨‍💻 Development
-
-```bash
-git clone https://github.com/asimov-platform/llama-index-asimov.git
-```
-
 [ASIMOV]: https://github.com/asimov-platform
 [Python]: https://python.org
 [modules]: https://github.com/asimov-modules
