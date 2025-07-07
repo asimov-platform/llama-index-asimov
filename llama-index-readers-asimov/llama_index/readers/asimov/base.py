@@ -1,7 +1,5 @@
 # This is free and unencumbered software released into the public domain.
 
-"""ASIMOV for LlamaIndex: Document loaders."""
-
 from __future__ import annotations
 
 import json
@@ -25,7 +23,7 @@ JSONLD_CONTEXT = {
 
 class AsimovReader(BaseReader):
     """
-    ASIMOV document loader integration.
+    ASIMOV reader.
 
     Setup:
         Install ``llama-index-asimov``:
