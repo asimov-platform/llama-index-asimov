@@ -3,15 +3,3 @@
 [![License](https://img.shields.io/badge/license-Public%20Domain-blue.svg)](https://unlicense.org)
 [![Compatibility](https://img.shields.io/python/required-version-toml?tomlFilePath=https%3A%2F%2Fraw.githubusercontent.com%2Fasimov-platform%2Fllama-index-asimov%2Frefs%2Fheads%2Fmaster%2Fllama-index-readers-asimov%2Fpyproject.toml)](https://pypi.python.org/pypi/llama-index-readers-asimov)
 [![Package](https://img.shields.io/pypi/v/llama-index-readers-asimov.svg)](https://pypi.python.org/pypi/llama-index-readers-asimov)
-
-LlamaIndex integration with [ASIMOV], a polyglot development platform for
-trustworthy, neurosymbolic AI.
-
-## 🛠️ Prerequisites
-
-- [Python] 3.9+
-- [ASIMOV] [modules] available in the [`PATH`]
-
-[ASIMOV]: https://github.com/asimov-platform
-[Python]: https://python.org
-[modules]: https://github.com/asimov-modules
