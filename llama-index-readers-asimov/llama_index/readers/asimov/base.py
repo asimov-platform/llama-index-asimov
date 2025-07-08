@@ -7,7 +7,7 @@ import logging
 import subprocess
 from typing import List, cast
 
-from .errors import AsimovModuleNotFound
+from .errors import AsimovModuleNotFound, AsimovCommandError, AsimovJSONDecodeError, AsimovJsonLdError
 from llama_index.core.readers.base import BaseReader
 from llama_index.core.schema import Document
 from pyld import jsonld
@@ -48,6 +48,8 @@ class AsimovReader(BaseReader):
         self.url = url
 
     def load_data(self) -> List[Document]:
+        result = None
+
         try:
             result = subprocess.run(
                 [f"asimov-{self.module}-importer", self.url],
@@ -67,22 +69,19 @@ class AsimovReader(BaseReader):
             return docs
 
         except FileNotFoundError as error:
-            # logger.exception(error)
             raise AsimovModuleNotFound(self.module) from (error if __debug__ else None)
         except subprocess.CalledProcessError as error:
-            # logger.exception(error)
-            raise error  # TODO
+            raise AsimovCommandError(command=error.cmd, stderr=error.stderr) from error
         except json.decoder.JSONDecodeError as error:
-            # logger.exception(error)
-            raise error  # TODO
+            raise AsimovJSONDecodeError(raw_output=result.stdout) from error
         except jsonld.JsonLdError as error:
-            # logger.exception(error)
-            raise error  # TODO
+            raise AsimovJsonLdError(detail=str(error)) from error
 
 
 def describe(resource: dict) -> str:
     prioritized_keys = ["know:summary", "know:title", "know:name", "know:link"]
     for key in prioritized_keys:
         if key in resource:
-            return resource[key]["@value"] if isinstance(resource[key], dict) and "@value" in resource[key] else resource[key]
+            return resource[key]["@value"] if isinstance(resource[key], dict) and "@value" in resource[key] else \
+                resource[key]
     return resource["@id"]
