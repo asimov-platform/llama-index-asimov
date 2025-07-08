@@ -81,12 +81,8 @@ class AsimovReader(BaseReader):
 
 
 def describe(resource: dict) -> str:
-    if "know:summary" in resource:
-        return resource["know:summary"]["@value"]
-    if "know:title" in resource:
-        return resource["know:title"]["@value"]
-    if "know:name" in resource:
-        return resource["know:name"]["@value"]
-    if "know:link" in resource:
-        return resource["know:link"]
+    prioritized_keys = ["know:summary", "know:title", "know:name", "know:link"]
+    for key in prioritized_keys:
+        if key in resource:
+            return resource[key]["@value"] if isinstance(resource[key], dict) and "@value" in resource[key] else resource[key]
     return resource["@id"]
