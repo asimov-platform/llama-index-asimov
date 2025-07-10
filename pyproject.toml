@@ -13,7 +13,7 @@ license = "Unlicense"
 license-files = ["UNLICENSE"]
 authors = [{ name = "ASIMOV Protocol", email = "support@asimov.so" }]
 requires-python = ">=3.9"
-dependencies = ["llama-index-core>=0.12"]
+dependencies = ["llama-index-core>=0.12", "pyld>=2"]
 dynamic = ["version"]
 
 [project.urls]
