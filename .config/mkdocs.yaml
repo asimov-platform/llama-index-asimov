@@ -6,7 +6,7 @@ site_dir: ../../_site
 site_name: ASIMOV for LlamaIndex
 site_url: https://llama-index-asimov.readthedocs.io/
 site_description: LlamaIndex integration with the ASIMOV platform.
-site_author: ASIMOV Protocol
+site_author: ASIMOV Systems
 repo_url: https://github.com/asimov-platform/llama-index-asimov
 use_directory_urls: false
 

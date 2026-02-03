@@ -9,13 +9,13 @@
 This repository currently provides:
 
 | Package | Description | PyPI |
-|--------|-------------|------|
+|---------|-------------|------|
 | `llama-index-readers-asimov` | Reader module that runs ASIMOV importers via subprocess | [📦 PyPI](https://pypi.org/project/llama-index-readers-asimov/) |
 
 ## 🛠️ Prerequisites
 
-- [Python] 3.9+
-- [ASIMOV] [modules] available in the [`PATH`]
+- [Python] 3.10+
+- [ASIMOV] [modules] available in the [`PATH`] and/or `$HOME/.asimov/libexec`
 
 ## ⬇️ Installation
 

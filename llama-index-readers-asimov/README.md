@@ -8,7 +8,7 @@ A [LlamaIndex] reader that integrates with the [ASIMOV] platform by invoking ext
 
 ## 🛠️ Prerequisites
 
-- [Python] 3.9+
+- [Python] 3.10+
 - [ASIMOV] [modules] available in the [`PATH`]
 
 ## ⬇️ Installation

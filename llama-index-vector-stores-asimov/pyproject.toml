@@ -11,9 +11,9 @@ description = "llama-index vector_stores ASIMOV integration"
 readme = "README.md"
 license = "Unlicense"
 license-files = ["UNLICENSE"]
-authors = [{ name = "ASIMOV Protocol", email = "support@asimov.so" }]
-requires-python = ">=3.9"
-dependencies = []
+authors = [{ name = "ASIMOV Systems", email = "support@asimov.systems" }]
+requires-python = ">=3.10"
+dependencies = ["asimov.py"]
 dynamic = ["version"]
 
 [project.urls]

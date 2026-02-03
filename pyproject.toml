@@ -9,12 +9,16 @@ build-backend = "hatchling.build"
 name = "llama-index-asimov"
 description = "LlamaIndex integration with the ASIMOV platform."
 readme = "README.md"
+authors = [{ name = "ASIMOV Systems", email = "support@asimov.systems" }]
 license = "Unlicense"
 license-files = ["UNLICENSE"]
-authors = [{ name = "ASIMOV Protocol", email = "support@asimov.so" }]
-requires-python = ">=3.9"
-dependencies = ["llama-index-core>=0.12", "pyld>=2"]
 dynamic = ["version"]
+
+requires-python = ">=3.10"
+dependencies = ["asimov.py", "llama-index-core>=0.12", "PyLD>=2"]
+
+keywords = ["asimov"]
+classifiers = []
 
 [project.urls]
 Homepage = "https://github.com/asimov-platform"
@@ -22,6 +26,7 @@ Repository = "https://github.com/asimov-platform/llama-index-asimov"
 Changelog = "https://github.com/asimov-platform/llama-index-asimov/blob/master/CHANGES.md"
 Releases = "https://github.com/asimov-platform/llama-index-asimov/releases"
 Issues = "https://github.com/asimov-platform/llama-index-asimov/issues"
+Documentation = "https://llama-index-asimov.readthedocs.io"
 
 [dependency-groups]
 dev = []
@@ -29,6 +34,7 @@ docs = [
     "mkdocs>=1.6",
     "mkdocs-git-committers-plugin-2>=2.5",
     "mkdocs-git-revision-date-localized-plugin>=1.2",
+    "mkdocs-github-admonitions-plugin>=0.1",
     "mkdocs-llmstxt>=0.2",
     "mkdocs-material[imaging]>=9.5",
     "mkdocstrings[python]>=0.29",
