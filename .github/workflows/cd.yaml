@@ -48,7 +48,6 @@ jobs:
         with:
           name: dist
           path: dist
-          continue-on-error: true
       - uses: astral-sh/setup-uv@v7
         with:
           python-version: 3.13
